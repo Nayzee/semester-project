@@ -11,6 +11,7 @@ public class MainActivity extends AppCompatActivity {
     private Button settingsButton;
     private Button storyButton;
     private Button scoresButton;
+    private Button gameButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
         settingsButton = (Button) findViewById(R.id.btnSettings);
         storyButton = (Button) findViewById(R.id.btnStory);
         scoresButton = (Button) findViewById(R.id.btnScores);
+        gameButton = (Button) findViewById(R.id.btnGame);
 
         //go to settings when button is clicked
         settingsButton.setOnClickListener(new View.OnClickListener() {
@@ -45,6 +47,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, ScoresActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        gameButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, ResultsActivity.class);
                 startActivity(intent);
             }
         });
