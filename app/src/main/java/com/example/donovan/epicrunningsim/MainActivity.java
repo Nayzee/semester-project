@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
-
+    //create variables buttons
     private Button settingsButton;
     private Button storyButton;
     private Button scoresButton;
@@ -17,10 +17,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //attach button variables to buttons in layout
         settingsButton = (Button) findViewById(R.id.btnSettings);
         storyButton = (Button) findViewById(R.id.btnStory);
         scoresButton = (Button) findViewById(R.id.btnScores);
 
+        //go to settings when button is clicked
         settingsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -29,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        //go to story when button is clicked
         storyButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -37,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        //go to scores when button is clicked
         scoresButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -45,20 +49,4 @@ public class MainActivity extends AppCompatActivity {
             }
         });
      }
-
-    private void launchScores() {
-        Intent intent = new Intent(this, ScoresActivity.class);
-        startActivity(intent);
-    }
-
-    private void launchStory() {
-        Intent intent = new Intent(this, StoryActivity.class);
-        startActivity(intent);
-    }
-
-    public void launchSettings() {
-
-
-
-    }
 }
