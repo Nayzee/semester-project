@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import java.io.File;
+
 public class MainActivity extends AppCompatActivity {
     //create variables buttons
     private Button settingsButton;
@@ -56,6 +58,8 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, ResultsActivity.class);
                 startActivity(intent);
+
+
             }
         });
      }
