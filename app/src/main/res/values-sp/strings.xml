@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">Corriendo Epico Simulador</string>
+    <string name="start_run_Button">Empezar</string>
+    <string name="settings">Opciones</string>
+    <string name="story">Historia</string>
+    <string name="back_button">Volver</string>
+    <string name="language_button">Idioma: español</string>
+    <string name="clear_progress_button">Eliminar Juego</string>
+    <string name="story_text">En este juego eres un corredor que está tratando de comprar un par de zapatos nuevos. Vas a correr para ganar monedas, y usas esas monedas para comprar un par de zapatos. También puede comprar actualizaciones con las monedas, lo que le permite ganar más monedas por carrera. ¡Feliz corriendo!</string>
+    <string name="results">Corriendo Resultados</string>
+    <string name="coins_collected">Moneda Recogido:</string>
+    <string name="total_coins">"Completo Moneda: "</string>
 </resources>
