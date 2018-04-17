@@ -12,7 +12,6 @@ public class MainActivity extends AppCompatActivity {
     //create variables buttons
     private Button settingsButton;
     private Button storyButton;
-    private Button scoresButton;
     private Button gameButton;
 
     @Override
@@ -23,7 +22,6 @@ public class MainActivity extends AppCompatActivity {
         //attach button variables to buttons in layout
         settingsButton = (Button) findViewById(R.id.btnSettings);
         storyButton = (Button) findViewById(R.id.btnStory);
-        scoresButton = (Button) findViewById(R.id.btnScores);
         gameButton = (Button) findViewById(R.id.btnGame);
 
         //go to settings when button is clicked
@@ -40,15 +38,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, StoryActivity.class);
-                startActivity(intent);
-            }
-        });
-
-        //go to scores when button is clicked
-        scoresButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, ScoresActivity.class);
                 startActivity(intent);
             }
         });
