@@ -1,6 +1,8 @@
 package com.example.donovan.epicrunningsim;
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -12,6 +14,8 @@ import org.w3c.dom.Text;
 
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
+
+import static java.lang.Integer.parseInt;
 
 public class ResultsActivity extends AppCompatActivity {
     //create variable for back button
@@ -28,9 +32,9 @@ public class ResultsActivity extends AppCompatActivity {
         //attach button variable to button in layout
         backButton = (Button) findViewById(R.id.btnBack);
         totalCoins = (TextView) findViewById(R.id.txtTotalCoins);
-        totalCoins.setText("Total Coins: " + numOfCoins);
+        //totalCoins.setText("Total Coins: " + numOfCoins);
 
-        FileInputStream inputStream;
+        /*FileInputStream inputStream;
 
         try {
             inputStream = openFileInput("numberOfCoins");
@@ -51,7 +55,42 @@ public class ResultsActivity extends AppCompatActivity {
             outputStream.close();
         } catch (Exception e) {
             e.printStackTrace();
-        }
+        }*/
+
+
+
+        /*SharedPreferences sharedPref = this.getPreferences(Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPref.edit();
+        editor.putInt(getString(R.string.saved_high_score_key), newHighScore);*/
+
+
+
+
+
+
+
+        /*SharedPreferences sharedPref = this.getPreferences(Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPref.edit();
+        editor.putInt(getString(R.string.number_of_coins), 5);
+        editor.apply();
+        editor.putInt(getString(R.string.number_of_coins), parseInt(getString(R.string.number_of_coins)) + 1);
+        editor.apply();
+
+        int test = sharedPref.getInt(getString(R.string.number_of_coins), 6);
+
+
+
+
+
+        totalCoins.setText("" + test);*/
+
+
+
+
+
+
+
+
 
 
         //go back to main activity
@@ -62,4 +101,6 @@ public class ResultsActivity extends AppCompatActivity {
             }
         });
     }
+
+
 }
