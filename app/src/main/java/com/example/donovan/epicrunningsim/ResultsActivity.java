@@ -72,8 +72,6 @@ public class ResultsActivity extends AppCompatActivity {
         upgradeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-
                 if (numOfCoins >= 100) {
                     //subtract coins to purchase an upgrade
                     numOfCoins -= 100;
@@ -90,6 +88,7 @@ public class ResultsActivity extends AppCompatActivity {
                     totalCoins.setText(getString(R.string.total_coins) + " " + sharedPrefCoins.getInt("numberOfCoins", 0));
                 }
                 else{
+                    //let the user know if they do not have enough coins to buy an upgrade
                     Toast toast = Toast.makeText(getApplicationContext(), getString(R.string.no_coins_message), Toast.LENGTH_SHORT);
                     toast.show();
                 }

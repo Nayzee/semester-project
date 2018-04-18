@@ -25,24 +25,15 @@ public class SettingsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
 
-
-
-
         //attach button variable to button in layout
         backButton = (Button) findViewById(R.id.btnBack);
         deleteButton = (Button) findViewById(R.id.btnDelete);
 
-
-
-
-
-
-
-
-
+        //clear game progress
         deleteButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                //access the shared preference files for coins and upgrades
                 SharedPreferences sharedPrefCoins = getApplicationContext().getSharedPreferences(
                         "numberOfCoins", Context.MODE_PRIVATE);
                 SharedPreferences sharedPrefUpgrades = getApplicationContext().getSharedPreferences(
@@ -50,14 +41,13 @@ public class SettingsActivity extends AppCompatActivity {
                 SharedPreferences.Editor editorCoins = sharedPrefCoins.edit();
                 SharedPreferences.Editor editorUpgrades = sharedPrefUpgrades.edit();
 
+                //set coins and upgrades to 0
                 editorCoins.putInt("numberOfCoins", 0);
                 editorCoins.apply();
-
                 editorUpgrades.putInt("numberOfUpgrades", 0);
                 editorUpgrades.apply();
 
-
-
+                //create a toast letting the user know what has happened
                 Toast toast = Toast.makeText(getApplicationContext(), getString(R.string.delete_message), Toast.LENGTH_SHORT);
                 toast.show();
 
