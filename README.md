@@ -1,4 +1,4 @@
-# semester project
+# Semester Project
 
 Q: What changes have been made since the last assignment?
 
@@ -13,10 +13,22 @@ A: Here's a list:
 7. Made the settings menu fully functional. The "Clear Game Progress" button works as intended.
 8. Removed the High Scores page. Since the game does not keep track of score, I felt that high scores were unnessesary, so they have been cut from the game.
 
+
+Q: Is there anything that doesn't work?
+
+A: 
+
+1. The story page currently does not work as intended. The story's text is too small when using the app, but to big when editing the app in layout view.
+2. There is no support for the landscape orientation, only portrait. I haven't decided yet if I want to add support for landscape or force the game to only play in portrait.
+3. The main game is unfinished, but many of the game mechanics work as intended.
+
+
 Q: What changes do you have planned for the future?
 
-A: Here's another list. More stuff may be added later:
+A: This is the current list of plans. More stuff may be added later:
 
-1. Fix the story menu. The story's text is too small when using the app, but to big when editing the app in layout view.
-2. Give the upgrades a purpose.
-3. Make the game more interesting to play.
+1. Fix the story menu.
+2. Fix the issues with screen orientation.
+3. Give the upgrades a purpose.
+4. Make the game more interesting to play.
+5. Add a win condition to the game.
