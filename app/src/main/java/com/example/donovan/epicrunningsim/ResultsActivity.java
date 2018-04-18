@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.w3c.dom.Text;
 
@@ -34,16 +35,15 @@ public class ResultsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_results);
 
-        //attach button variable to button in layout
+        //attach variables to buttons and textviews in layout
         backButton = (Button) findViewById(R.id.btnBack);
         upgradeButton = (Button) findViewById(R.id.btnUpgrade);
         totalCoins = (TextView) findViewById(R.id.txtTotalCoins);
         coinsCollected = (TextView) findViewById(R.id.txtCoinsCollected);
         upgrades = (TextView) findViewById(R.id.txtNumberOfUpgrades);
 
-
+        //display the number of coins
         coinsCollected.setText(getString(R.string.coins_collected) + " " + coinsPerRun);
-
 
         //create file to store coins and upgrades
         final SharedPreferences sharedPrefCoins = getApplicationContext().getSharedPreferences(
@@ -66,25 +66,34 @@ public class ResultsActivity extends AppCompatActivity {
 
         //update the display for the coins
         totalCoins.setText(getString(R.string.total_coins) + " " + sharedPrefCoins.getInt("numberOfCoins", 0));
+        upgrades.setText(getString(R.string.upgrades) + " " + sharedPrefUpgrades.getInt("numberOfUpgrades", 0));
 
         //buy an upgrade
         upgradeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                //subtract coins to purchase an upgrade
-                numOfCoins -= 100;
-                numOfUpgrades += 1;
 
-                //update the number of coins and the number of upgrades
-                editorUpgrades.putInt("numberOfUpgrades", numOfUpgrades);
-                editorUpgrades.apply();
-                editorCoins.putInt("numberOfCoins", numOfCoins);
-                editorCoins.apply();
+                if (numOfCoins >= 100) {
+                    //subtract coins to purchase an upgrade
+                    numOfCoins -= 100;
+                    numOfUpgrades += 1;
 
-                //update the display for coins and upgrades
-                upgrades.setText("Number of Upgrades: " + sharedPrefUpgrades.getInt("numberOfUpgrades", 0));
-                totalCoins.setText(getString(R.string.total_coins) + " " + sharedPrefCoins.getInt("numberOfCoins", 0));
+                    //update the number of coins and the number of upgrades
+                    editorUpgrades.putInt("numberOfUpgrades", numOfUpgrades);
+                    editorUpgrades.apply();
+                    editorCoins.putInt("numberOfCoins", numOfCoins);
+                    editorCoins.apply();
+
+                    //update the display for coins and upgrades
+                    upgrades.setText(getString(R.string.upgrades) + " " + sharedPrefUpgrades.getInt("numberOfUpgrades", 0));
+                    totalCoins.setText(getString(R.string.total_coins) + " " + sharedPrefCoins.getInt("numberOfCoins", 0));
+                }
+                else{
+                    Toast toast = Toast.makeText(getApplicationContext(), getString(R.string.no_coins_message), Toast.LENGTH_SHORT);
+                    toast.show();
+                }
+
             }
         });
 

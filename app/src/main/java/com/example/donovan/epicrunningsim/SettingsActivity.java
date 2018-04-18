@@ -45,12 +45,20 @@ public class SettingsActivity extends AppCompatActivity {
             public void onClick(View view) {
                 SharedPreferences sharedPrefCoins = getApplicationContext().getSharedPreferences(
                         "numberOfCoins", Context.MODE_PRIVATE);
+                SharedPreferences sharedPrefUpgrades = getApplicationContext().getSharedPreferences(
+                        "numberOfUpgrades", Context.MODE_PRIVATE);
                 SharedPreferences.Editor editorCoins = sharedPrefCoins.edit();
+                SharedPreferences.Editor editorUpgrades = sharedPrefUpgrades.edit();
 
                 editorCoins.putInt("numberOfCoins", 0);
                 editorCoins.apply();
 
-                Toast toast = Toast.makeText(getApplicationContext(), "Your coins have been set to 0.", Toast.LENGTH_SHORT);
+                editorUpgrades.putInt("numberOfUpgrades", 0);
+                editorUpgrades.apply();
+
+
+
+                Toast toast = Toast.makeText(getApplicationContext(), getString(R.string.delete_message), Toast.LENGTH_SHORT);
                 toast.show();
 
 

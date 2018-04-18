@@ -9,4 +9,8 @@
     <string name="results">Corriendo Resultados</string>
     <string name="coins_collected">Moneda Recogido:</string>
     <string name="total_coins">"Completo Moneda: "</string>
+    <string name="delete_message">Tus monedas y mejoras se han ido.</string>
+    <string name="upgrades">Mejoras:</string>
+    <string name="upgrade_button">Comprar una Mejora</string>
+    <string name="no_coins_message">No tienes suficiente monedas!</string>
 </resources>

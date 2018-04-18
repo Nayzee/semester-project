@@ -27,11 +27,6 @@ public class MainActivity extends AppCompatActivity {
         gameButton = (Button) findViewById(R.id.btnGame);
 
 
-
-
-
-
-
         //go to settings when button is clicked
         settingsButton.setOnClickListener(new View.OnClickListener() {
             @Override

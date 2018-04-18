@@ -52,7 +52,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
-        android:text="Buy an upgrade"
+        android:text="@string/upgrade_button"
         app:layout_constraintBottom_toTopOf="@+id/btnBack"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent" />
@@ -62,7 +62,7 @@
         android:layout_width="wrap_content"
         android:layout_height="24dp"
         android:layout_marginTop="36dp"
-        android:text="Upgrades: "
+        android:text="@string/upgrades"
         app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
