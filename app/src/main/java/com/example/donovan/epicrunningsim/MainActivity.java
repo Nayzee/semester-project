@@ -1,6 +1,8 @@
 package com.example.donovan.epicrunningsim;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -23,6 +25,12 @@ public class MainActivity extends AppCompatActivity {
         settingsButton = (Button) findViewById(R.id.btnSettings);
         storyButton = (Button) findViewById(R.id.btnStory);
         gameButton = (Button) findViewById(R.id.btnGame);
+
+
+
+
+
+
 
         //go to settings when button is clicked
         settingsButton.setOnClickListener(new View.OnClickListener() {

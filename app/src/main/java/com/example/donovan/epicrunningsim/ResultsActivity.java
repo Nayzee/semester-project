@@ -22,6 +22,7 @@ public class ResultsActivity extends AppCompatActivity {
     private Button backButton;
     private TextView totalCoins;
     private int numOfCoins;
+    int coinsPerRun = 100;
 
 
     @Override
@@ -62,6 +63,24 @@ public class ResultsActivity extends AppCompatActivity {
         /*SharedPreferences sharedPref = this.getPreferences(Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPref.edit();
         editor.putInt(getString(R.string.saved_high_score_key), newHighScore);*/
+
+
+
+        SharedPreferences sharedPref = getApplicationContext().getSharedPreferences(
+                "numberOfCoins", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPref.edit();
+
+        numOfCoins = sharedPref.getInt("numberOfCoins", 0);
+
+        numOfCoins = numOfCoins + coinsPerRun;
+
+        editor.putInt("numberOfCoins", numOfCoins);
+        editor.apply();
+
+        totalCoins.setText(getString(R.string.total_coins) + sharedPref.getInt("numberOfCoins", 0));
+
+
+
 
 
 

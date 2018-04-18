@@ -1,5 +1,7 @@
 package com.example.donovan.epicrunningsim;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.os.Build;
@@ -9,6 +11,7 @@ import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import java.util.Locale;
 
@@ -31,9 +34,25 @@ public class SettingsActivity extends AppCompatActivity {
 
 
 
+
+
+
+
+
+
         deleteButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                SharedPreferences sharedPref = getApplicationContext().getSharedPreferences(
+                        "numberOfCoins", Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor = sharedPref.edit();
+
+                editor.putInt("numberOfCoins", 0);
+                editor.apply();
+
+                Toast toast = Toast.makeText(getApplicationContext(), "Your coins have been set to 0.", Toast.LENGTH_SHORT);
+                toast.show();
+
 
             }
         });
