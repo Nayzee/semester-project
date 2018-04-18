@@ -43,12 +43,12 @@ public class SettingsActivity extends AppCompatActivity {
         deleteButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                SharedPreferences sharedPref = getApplicationContext().getSharedPreferences(
+                SharedPreferences sharedPrefCoins = getApplicationContext().getSharedPreferences(
                         "numberOfCoins", Context.MODE_PRIVATE);
-                SharedPreferences.Editor editor = sharedPref.edit();
+                SharedPreferences.Editor editorCoins = sharedPrefCoins.edit();
 
-                editor.putInt("numberOfCoins", 0);
-                editor.apply();
+                editorCoins.putInt("numberOfCoins", 0);
+                editorCoins.apply();
 
                 Toast toast = Toast.makeText(getApplicationContext(), "Your coins have been set to 0.", Toast.LENGTH_SHORT);
                 toast.show();
