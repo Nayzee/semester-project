@@ -15,7 +15,7 @@ public class StoryActivity extends AppCompatActivity {
         setContentView(R.layout.activity_story);
 
         //attach button variable to button in layout
-        backButton = (Button) findViewById(R.id.btnBack);
+        backButton = (Button) findViewById(R.id.win);
 
         //go back to main activity
         backButton.setOnClickListener(new View.OnClickListener() {

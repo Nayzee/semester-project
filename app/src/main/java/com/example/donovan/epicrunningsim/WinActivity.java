@@ -14,7 +14,7 @@ public class WinActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_win);
 
-        backButton = (Button) findViewById(R.id.btnBack);
+        backButton = (Button) findViewById(R.id.win);
 
         //go back to main activity
         backButton.setOnClickListener(new View.OnClickListener() {

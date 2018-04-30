@@ -18,6 +18,7 @@
         </activity>
         <activity android:name=".StoryActivity" />
         <activity android:name=".SettingsActivity" />
+        <activity android:name=".WinActivity" />
         <activity android:name=".ResultsActivity"></activity>
     </application>
 

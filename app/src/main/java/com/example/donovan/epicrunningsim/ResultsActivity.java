@@ -32,7 +32,7 @@ public class ResultsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_results);
 
         //attach variables to buttons and textviews in layout
-        backButton = (Button) findViewById(R.id.btnBack);
+        backButton = (Button) findViewById(R.id.win);
         winButton = (Button) findViewById(R.id.btnWin);
         upgradeButton = (Button) findViewById(R.id.btnUpgrade);
         runButton = (Button) findViewById(R.id.btnRun);
@@ -127,7 +127,7 @@ public class ResultsActivity extends AppCompatActivity {
                     editorCoins.putInt("numberOfCoins", 0);
                     editorCoins.apply();
 
-                    Intent intent = new Intent(ResultsActivity.this, SettingsActivity.class);
+                    Intent intent = new Intent(ResultsActivity.this, WinActivity.class);
                     startActivity(intent);
                 }
                 else{
