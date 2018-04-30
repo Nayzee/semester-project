@@ -28,7 +28,8 @@ public class ResultsActivity extends AppCompatActivity {
     private TextView upgrades;
     private int numOfCoins;
     private int numOfUpgrades;
-    int coinsPerRun = 100;
+    int coinsPerRun;
+    double upgradeMultiplier = 1;
 
 
 
@@ -44,6 +45,7 @@ public class ResultsActivity extends AppCompatActivity {
         totalCoins = (TextView) findViewById(R.id.txtTotalCoins);
         coinsCollected = (TextView) findViewById(R.id.txtCoinsCollected);
         upgrades = (TextView) findViewById(R.id.txtNumberOfUpgrades);
+        coinsPerRun = 50;
 
 
 
@@ -55,17 +57,27 @@ public class ResultsActivity extends AppCompatActivity {
         final SharedPreferences.Editor editorCoins = sharedPrefCoins.edit();
         final SharedPreferences.Editor editorUpgrades = sharedPrefUpgrades.edit();
 
+        //get the number of coins and upgrades the user currently has
+        numOfCoins = sharedPrefCoins.getInt("numberOfCoins", 0);
+        numOfUpgrades = sharedPrefUpgrades.getInt("numberOfUpgrades", 0);
+
+        upgradeMultiplier = (numOfUpgrades * 0.1) + 1;
+        coinsPerRun = (int) Math.round(coinsPerRun * upgradeMultiplier);
+
+        //update the display for the coins
+        totalCoins.setText(getString(R.string.total_coins) + " " + sharedPrefCoins.getInt("numberOfCoins", 0));
+        upgrades.setText(getString(R.string.upgrades) + " " + sharedPrefUpgrades.getInt("numberOfUpgrades", 0));
+
 
 
         runButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+
+
                 //display the number of coins collected in a run
                 coinsCollected.setText(getString(R.string.coins_collected) + " " + coinsPerRun);
-
-                //get the number of coins and upgrades the user currently has
-                numOfCoins = sharedPrefCoins.getInt("numberOfCoins", 0);
-                numOfUpgrades = sharedPrefUpgrades.getInt("numberOfUpgrades", 0);
 
                 //take the coins from this run and add it to the total coins
                 numOfCoins = numOfCoins + coinsPerRun;
@@ -89,6 +101,9 @@ public class ResultsActivity extends AppCompatActivity {
                     //subtract coins to purchase an upgrade
                     numOfCoins -= 100;
                     numOfUpgrades += 1;
+                    upgradeMultiplier = (numOfUpgrades * 0.1) + 1;
+                    coinsPerRun = (int) Math.round(50 * upgradeMultiplier);
+
 
                     //update the number of coins and the number of upgrades
                     editorUpgrades.putInt("numberOfUpgrades", numOfUpgrades);
