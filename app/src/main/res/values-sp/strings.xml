@@ -13,4 +13,5 @@
     <string name="upgrades">Mejoras:</string>
     <string name="upgrade_button">Comprar una Mejora</string>
     <string name="no_coins_message">No tienes suficiente monedas!</string>
+    <string name="run_button">Corriendo!</string>
 </resources>

@@ -7,32 +7,24 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="@string/results"
-        android:textSize="24sp"
+        android:id="@+id/txtCoinsCollected"
+        android:layout_width="305dp"
+        android:layout_height="31dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/coins_collected"
+        android:textSize="18sp"
+        app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/txtCoinsCollected"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="108dp"
-        android:text="@string/coins_collected"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
-
-    <TextView
         android:id="@+id/txtTotalCoins"
-        android:layout_width="wrap_content"
-        android:layout_height="15dp"
-        android:layout_marginTop="60dp"
+        android:layout_width="208dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="68dp"
         android:text="@string/total_coins"
+        android:textSize="18sp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtCoinsCollected" />
@@ -54,18 +46,30 @@
         android:layout_marginBottom="8dp"
         android:text="@string/upgrade_button"
         app:layout_constraintBottom_toTopOf="@+id/btnBack"
+        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent" />
 
     <TextView
         android:id="@+id/txtNumberOfUpgrades"
-        android:layout_width="wrap_content"
-        android:layout_height="24dp"
-        android:layout_marginTop="36dp"
+        android:layout_width="127dp"
+        android:layout_height="26dp"
+        android:layout_marginTop="60dp"
         android:text="@string/upgrades"
-        app:layout_constraintHorizontal_bias="0.501"
+        android:textSize="18sp"
+        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtTotalCoins" />
+
+    <Button
+        android:id="@+id/btnRun"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:text="@string/run_button"
+        app:layout_constraintBottom_toTopOf="@+id/btnUpgrade"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
 
 </android.support.constraint.ConstraintLayout>
