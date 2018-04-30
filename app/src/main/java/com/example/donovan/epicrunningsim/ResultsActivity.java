@@ -1,28 +1,21 @@
 package com.example.donovan.epicrunningsim;
 
-import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import org.w3c.dom.Text;
-
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-
-import static java.lang.Integer.parseInt;
 
 public class ResultsActivity extends AppCompatActivity {
     //create variable for back button
     private Button backButton;
     private Button upgradeButton;
     private Button runButton;
+    private Button winButton;
     private TextView coinsCollected;
     private TextView totalCoins;
     private TextView upgrades;
@@ -40,6 +33,7 @@ public class ResultsActivity extends AppCompatActivity {
 
         //attach variables to buttons and textviews in layout
         backButton = (Button) findViewById(R.id.btnBack);
+        winButton = (Button) findViewById(R.id.btnWin);
         upgradeButton = (Button) findViewById(R.id.btnUpgrade);
         runButton = (Button) findViewById(R.id.btnRun);
         totalCoins = (TextView) findViewById(R.id.txtTotalCoins);
@@ -101,7 +95,7 @@ public class ResultsActivity extends AppCompatActivity {
                     //subtract coins to purchase an upgrade
                     numOfCoins -= 100;
                     numOfUpgrades += 1;
-                    upgradeMultiplier = (numOfUpgrades * 0.1) + 1;
+                    upgradeMultiplier = (numOfUpgrades * 0.5) + 1;
                     coinsPerRun = (int) Math.round(50 * upgradeMultiplier);
 
 
@@ -121,6 +115,26 @@ public class ResultsActivity extends AppCompatActivity {
                     toast.show();
                 }
 
+            }
+        });
+
+        winButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (numOfCoins >= 1000) {
+                    editorUpgrades.putInt("numberOfUpgrades", 0);
+                    editorUpgrades.apply();
+                    editorCoins.putInt("numberOfCoins", 0);
+                    editorCoins.apply();
+
+                    Intent intent = new Intent(ResultsActivity.this, SettingsActivity.class);
+                    startActivity(intent);
+                }
+                else{
+                    //let the user know if they do not have enough coins to buy the shoes
+                    Toast toast = Toast.makeText(getApplicationContext(), getString(R.string.no_coins_shoes), Toast.LENGTH_SHORT);
+                    toast.show();
+                }
             }
         });
 

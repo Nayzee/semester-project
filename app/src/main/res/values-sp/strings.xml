@@ -14,4 +14,7 @@
     <string name="upgrade_button">Comprar una Mejora</string>
     <string name="no_coins_message">No tienes suficiente monedas!</string>
     <string name="run_button">Corriendo!</string>
+    <string name="no_coins_shoes">No tienes suficiente monedas!</string>
+    <string name="win_message">¡Felicitaciones has ganado!</string>
+    <string name="buy_shoes_button">Compra los zapatos</string>
 </resources>
