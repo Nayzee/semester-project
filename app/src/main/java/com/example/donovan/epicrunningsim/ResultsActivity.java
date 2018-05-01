@@ -123,7 +123,7 @@ public class ResultsActivity extends AppCompatActivity {
         winButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (numOfCoins >= 1000) {
+                if (numOfCoins >= 1000000) {
                     //set coins and upgrades to 0
                     editorCoins.putInt("numberOfCoins", 0);
                     editorCoins.apply();
