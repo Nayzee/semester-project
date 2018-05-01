@@ -59,6 +59,7 @@ public class ResultsActivity extends AppCompatActivity {
         coinsPerRun = (int) Math.round(coinsPerRun * upgradeMultiplier);
 
         //update the display for the coins
+        coinsCollected.setText(getString(R.string.coins_collected) + " " + coinsPerRun);
         totalCoins.setText(getString(R.string.total_coins) + " " + sharedPrefCoins.getInt("numberOfCoins", 0));
         upgrades.setText(getString(R.string.upgrades) + " " + sharedPrefUpgrades.getInt("numberOfUpgrades", 0));
 
@@ -97,6 +98,7 @@ public class ResultsActivity extends AppCompatActivity {
                     numOfUpgrades += 1;
                     upgradeMultiplier = (numOfUpgrades * 0.5) + 1;
                     coinsPerRun = (int) Math.round(50 * upgradeMultiplier);
+                    coinsCollected.setText(getString(R.string.coins_collected) + " " + coinsPerRun);
 
 
                     //update the number of coins and the number of upgrades
@@ -122,10 +124,11 @@ public class ResultsActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if (numOfCoins >= 1000) {
-                    editorUpgrades.putInt("numberOfUpgrades", 0);
-                    editorUpgrades.apply();
+                    //set coins and upgrades to 0
                     editorCoins.putInt("numberOfCoins", 0);
                     editorCoins.apply();
+                    editorUpgrades.putInt("numberOfUpgrades", 0);
+                    editorUpgrades.apply();
 
                     Intent intent = new Intent(ResultsActivity.this, WinActivity.class);
                     startActivity(intent);

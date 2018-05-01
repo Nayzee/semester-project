@@ -8,8 +8,8 @@
 
     <TextView
         android:id="@+id/txtCoinsCollected"
-        android:layout_width="304dp"
-        android:layout_height="37dp"
+        android:layout_width="170dp"
+        android:layout_height="41dp"
         android:layout_marginTop="44dp"
         android:text="@string/coins_collected"
         android:textSize="14sp"
