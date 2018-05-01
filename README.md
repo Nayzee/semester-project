@@ -10,8 +10,11 @@ A: Here's a list:
 4. Fixed the story menu. It now displays properly
 5. Added in a few measures to ensure that integer overflow cannot occur with the coins or upgrades
 6. Added a win condition. When you click on the "Buy Shoes" Button, you win the game
+
 6.1. Changed the number of coins required to win the game from 10,000 to 1,000,000
+
 6.2. Fixed some glitches that would crash the game whenever the victory screen was shown
+
 7. Minor adjustments to the interface, like rearranging some controls and making sure text and buttons were properly aligned 
 
 
