@@ -55,8 +55,8 @@ public class ResultsActivity extends AppCompatActivity {
         numOfCoins = sharedPrefCoins.getInt("numberOfCoins", 0);
         numOfUpgrades = sharedPrefUpgrades.getInt("numberOfUpgrades", 0);
 
-        upgradeMultiplier = (numOfUpgrades * 0.1) + 1;
-        coinsPerRun = (int) Math.round(coinsPerRun * upgradeMultiplier);
+        upgradeMultiplier = (numOfUpgrades * 0.5) + 1;
+        coinsPerRun = (int) Math.round(50 * upgradeMultiplier);
 
         //update the display for the coins
         coinsCollected.setText(getString(R.string.coins_collected) + " " + coinsPerRun);
@@ -100,7 +100,7 @@ public class ResultsActivity extends AppCompatActivity {
         upgradeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (numOfUpgrades <= 2000000000){
+                if (numOfUpgrades <= 500000 && coinsPerRun <= 2000000000){
                     if (numOfCoins >= 100) {
                         //subtract coins to purchase an upgrade
                         numOfCoins -= 100;
