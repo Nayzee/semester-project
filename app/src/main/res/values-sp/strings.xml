@@ -17,4 +17,6 @@
     <string name="no_coins_shoes">No tienes suficiente monedas!</string>
     <string name="win_message">¡Felicitaciones has ganado!</string>
     <string name="buy_shoes_button">Compra los zapatos</string>
+    <string name="too_many_coins">" demasiados monedas!"</string>
+    <string name="too_many_upgrades">" demasiados upgradas!"</string>
 </resources>

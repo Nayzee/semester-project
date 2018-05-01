@@ -18,4 +18,6 @@
     <string name="win_message">Congradulations, you\'ve won! With lots of effort and perseverence, you\'ve managed to collect 1,000,000 coins. Now you can buy that new pair of shoes you\'ve always wanted.</string>
     <string name="buy_shoes_button">Buy the shoes</string>
     <string name="play_again" translatable="false">Play Again</string>
+    <string name="too_many_coins">Don\'t you have enough coins?</string>
+    <string name="too_many_upgrades">Don\'t you have enough upgrades?</string>
 </resources>
