@@ -68,22 +68,28 @@ public class ResultsActivity extends AppCompatActivity {
         runButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                if (numOfCoins <= 2000000000) {
+                    //display the number of coins collected in a run
+                    coinsCollected.setText(getString(R.string.coins_collected) + " " + coinsPerRun);
+
+                    //take the coins from this run and add it to the total coins
+                    numOfCoins = numOfCoins + coinsPerRun;
+
+                    //update the number of coins in the shared preferences file
+                    editorCoins.putInt("numberOfCoins", numOfCoins);
+                    editorCoins.apply();
+
+                    //update the display for the coins
+                    totalCoins.setText(getString(R.string.total_coins) + " " + sharedPrefCoins.getInt("numberOfCoins", 0));
+                    upgrades.setText(getString(R.string.upgrades) + " " + sharedPrefUpgrades.getInt("numberOfUpgrades", 0));
+                }
+                else {
+                    
+                }
 
 
 
-                //display the number of coins collected in a run
-                coinsCollected.setText(getString(R.string.coins_collected) + " " + coinsPerRun);
 
-                //take the coins from this run and add it to the total coins
-                numOfCoins = numOfCoins + coinsPerRun;
-
-                //update the number of coins in the shared preferences file
-                editorCoins.putInt("numberOfCoins", numOfCoins);
-                editorCoins.apply();
-
-                //update the display for the coins
-                totalCoins.setText(getString(R.string.total_coins) + " " + sharedPrefCoins.getInt("numberOfCoins", 0));
-                upgrades.setText(getString(R.string.upgrades) + " " + sharedPrefUpgrades.getInt("numberOfUpgrades", 0));
 
             }
         });

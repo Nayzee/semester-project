@@ -15,6 +15,7 @@
     <string name="no_coins_message">You don\'t have enough coins!</string>
     <string name="run_button">Go for a run</string>
     <string name="no_coins_shoes">You need 1,000,000 coins to buy the shoes.</string>
-    <string name="win_message">Congratulations, you won!</string>
+    <string name="win_message">Congradulations, you\'ve won! With lots of effort and perseverence, you\'ve managed to collect 1,000,000 coins. Now you can buy that new pair of shoes you\'ve always wanted.</string>
     <string name="buy_shoes_button">Buy the shoes</string>
+    <string name="play_again" translatable="false">Play Again</string>
 </resources>
